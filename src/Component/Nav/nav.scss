@@ -1,0 +1,184 @@
+.navBar,
+.scrollNavActive {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 1001;
+    transition: 0.5s;
+
+    .navCont {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        .logo {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 18px;
+
+            span:nth-child(1) {
+                letter-spacing: 5px;
+                padding-top: 3px;
+                padding-left: 8px;
+                color: #002D62;
+            }
+
+            span:nth-child(2) {
+                font-size: 40px;
+                letter-spacing: 7px;
+                color: white;
+            }
+
+            h4 {
+                color: white;
+            }
+
+        }
+
+        .burgerNavigationBar, .navStikyBurger {
+            width: 40%;
+            height: 100vh;
+            background-color: rgb(50, 50, 227);
+            position: absolute;
+            // top: 80px;
+            top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.6s;
+            .navBarMenuBurger{
+                width: 100%;
+                // margin: 0 auto;
+                background-color: red;
+                display: flex;
+                justify-content: center;
+                ul{
+                    width: 80%;
+                    background-color: green;
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: column;
+                    // // margin: 0 auto;
+                    align-items: center;
+                    justify-content: center;
+                   
+                    .menuLink{
+                        width: 100%;
+                        background-color: #002D62;
+                        a{
+                            width: 100%;
+                            li{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .navStikyBurger{
+            top: 80px;
+            height: calc(100vh - 80px);
+        }
+
+        .navBarMenu {
+
+            ul {
+                width: 100%;
+                list-style-type: none;
+                display: flex;
+                gap: 20px;
+                padding-right: 18px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 2px;
+
+                    &:hover {
+                        color: #1F75FE;
+                    }
+                }
+
+                .ant-select-single .ant-select-selector {
+                    font-size: 12px;
+                }
+
+            }
+        }
+
+    }
+}
+
+.scrollNavActive {
+    transition: 0.5s;
+    padding: 10px 0;
+    background-image: linear-gradient(111.4deg, rgba(7, 7, 9, 1) 6.5%, rgba(27, 24, 113, 1) 93.2%);
+}
+
+@media only screen and (min-width: 860px) {
+    .navCont {
+
+        .burgerOpen,
+        .burgerFalse {
+            display: none;
+        }
+
+        .burgerNavigationBar {
+            right: -100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .navBarMenu {
+        display: none;
+    }
+
+    .burgerNavigationBar {
+        right: 0;
+        display: block;
+        .navBarMenuBurger{
+            width: 100%;
+            // margin: 0 auto;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            ul{
+                width: 80%;
+                background-color: green;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                // // margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+               
+                .menuLink{
+                    width: 100%;
+                    background-color: #002D62;
+                }}}
+    }
+
+    .navCont {
+
+        .burgerOpen,
+        .burgerFalse {
+            display: block;
+            color: white;
+            font-size: 20px;
+            padding-right: 18px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    }
+
+}
