@@ -41,52 +41,57 @@
 
         }
 
-        .burgerNavigationBar, .navStikyBurger {
-            width: 40%;
-            height: 100vh;
-            background-color: rgb(50, 50, 227);
+        .burgerNavigationBar {
+            background-color: rgb(247, 246, 246);
             position: absolute;
-            // top: 80px;
-            top: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: 0.6s;
-            .navBarMenuBurger{
+            height: 332px;
+            box-shadow: 0px 5px 10px 2px rgba(22, 25, 27, 0.2);
+
+            .navBarMenuBurger {
                 width: 100%;
-                // margin: 0 auto;
-                background-color: red;
+                height: 100%;
                 display: flex;
                 justify-content: center;
-                ul{
-                    width: 80%;
-                    background-color: green;
+
+                ul {
+                    width: 100%;
                     list-style-type: none;
                     display: flex;
                     flex-direction: column;
-                    // // margin: 0 auto;
                     align-items: center;
                     justify-content: center;
-                   
-                    .menuLink{
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                    padding-inline-start: 0;
+
+                    .menuLink {
                         width: 100%;
-                        background-color: #002D62;
-                        a{
+                        border-bottom: 2px solid gainsboro;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;
+                        a {
                             width: 100%;
-                            li{
+                            color: black;
+                            &:hover {
+                                color: #1F75FE;
+                            }
+                            li {
                                 width: 100%;
                             }
                         }
                     }
-                    a{
+
+                    a {
                         text-decoration: none;
                     }
                 }
             }
-        }
-        .navStikyBurger{
-            top: 80px;
-            height: calc(100vh - 80px);
+
         }
 
         .navBarMenu {
@@ -133,7 +138,7 @@
         }
 
         .burgerNavigationBar {
-            right: -100%;
+            top: -350px;
         }
     }
 }
@@ -143,32 +148,22 @@
         display: none;
     }
 
-    .burgerNavigationBar {
-        right: 0;
-        display: block;
-        .navBarMenuBurger{
-            width: 100%;
-            // margin: 0 auto;
-            background-color: red;
+    .navCont {
+        .burgerNavigationBar {
+            right: 20%;
+            left: 20%;
+            background-color: rgb(247, 246, 246);
+            position: absolute;
+            top: -350px;
             display: flex;
             justify-content: center;
-            ul{
-                width: 80%;
-                background-color: green;
-                list-style-type: none;
-                display: flex;
-                flex-direction: column;
-                // // margin: 0 auto;
-                align-items: center;
-                justify-content: center;
-               
-                .menuLink{
-                    width: 100%;
-                    background-color: #002D62;
-                }}}
-    }
-
-    .navCont {
+            align-items: center;
+            transition: 0.6s;
+            height: 332px;
+            &.navStikyBurger {
+                top: 70px;
+            }
+        }
 
         .burgerOpen,
         .burgerFalse {
@@ -181,4 +176,14 @@
         }
     }
 
+}
+
+@media only screen and (max-width: 465px) {
+
+    .navCont {
+        .burgerNavigationBar {
+            right: 0;
+            left: 0;
+        }
+    }
 }

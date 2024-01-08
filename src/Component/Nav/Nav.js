@@ -93,7 +93,7 @@ export default function Nav({ languageClick, language, selectLanguage }) {
                 
                     {/* <FiMenu className="burgerOpen" onClick={() => setMenuBurger(true)}></FiMenu> */}
                     {menuBurger ? <MdOutlineClose className="burgerFalse" onClick={() => setMenuBurger(false)}></MdOutlineClose> : <FiMenu className="burgerOpen" onClick={() => setMenuBurger(true)}></FiMenu>}
-                    {menuBurger && <Burger navSticky={navSticky} menuBurger={menuBurger} languageClick={languageClick} language={language} selectLanguage={selectLanguage}></Burger>}
+                    <Burger navSticky={navSticky} menuBurger={menuBurger} languageClick={languageClick} language={language} selectLanguage={selectLanguage} setMenuBurger={setMenuBurger}></Burger>
                 
             </div>
         </nav>

@@ -3,44 +3,46 @@ import { Select } from 'antd';
 import { Outlet, Link } from "react-router-dom";
 import "./nav.scss";
 
-export default function Burger({ navSticky, languageClick, language, selectLanguage, menuBurger }) {
+export default function Burger({ languageClick, language, selectLanguage, menuBurger, setMenuBurger }) {
     return (
-        <div className={"burgerNavigationBar " + (navSticky && "navStikyBurger")}>
+        <div className={"burgerNavigationBar " + (menuBurger && "navStikyBurger")}>
             <div className="navBarMenuBurger">
                 {selectLanguage[language].map((lang) => {
                     return <ul>
                         <div className="menuLink">
-                            <Link to="/about">
+                            <Link to="/" onClick={()=>setMenuBurger(false)}>
+                                <li>{lang.home}</li>
+                            </Link>
+                        </div>
+                        <div className="menuLink">
+                            <Link to="/about" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.about}</li>
                             </Link>
                         </div>
                         <div className="menuLink">
-                            <Link to="/services">
+                            <Link to="/services" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.service}</li>
                             </Link>
                         </div>
                         <div className="menuLink">
-                            <Link to="/portfolio">
+                            <Link to="/portfolio" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.portfolio}</li>
                             </Link>
                         </div>
                         <div className="menuLink">
-                            <Link to="/team">
+                            <Link to="/team" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.team}</li>
                             </Link>
                         </div>
                         <div className="menuLink">
-                            <Link to="/contact">
+                            <Link to="/contact" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.contact}</li>
                             </Link>
                         </div>
+                        <div className="menuLink">
                         <li>
                             <div className="selectLanguage">
-                                {/* <select value={language} onChange={languageClick} autoFocus>
-                                        <option value="English">EN</option>
-                                        <option value="Armenian">AM</option>
-                                        <option value="Russian">RU</option>
-                                    </select> */}
+                              
                                 <Select
                                     // labelInValue
                                     defaultValue={{ value: "English", label: "EN" }}
@@ -64,6 +66,7 @@ export default function Burger({ navSticky, languageClick, language, selectLangu
                                 />
                             </div>
                         </li>
+                        </div>
                     </ul>
                 })}
             </div>
