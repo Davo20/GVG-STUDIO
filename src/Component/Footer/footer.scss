@@ -52,6 +52,11 @@ footer {
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
+                        a{
+                            text-decoration: none;
+                            display: flex;
+                            align-items: center;
+                        }
                         svg {
                             color: white;
                         }

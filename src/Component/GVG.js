@@ -24,7 +24,10 @@ export default function GVG() {
     const selectLanguage = {
         English: [
             {
+                videoGraphic: "VIDEO GRAPHIC",
+                photoGraphic: "PHOTO GRAPHIC",
                 headinng: "Quality Videography Services",
+                headinngTwo: "Quality Photography Services",
                 expert: "10 Years Expert",
                 home: "Home",
                 about: "About",
@@ -46,6 +49,7 @@ export default function GVG() {
                 corporateEvents: "Corporate events, concerts, programs, film shooting and making",
                 mobileNumber: "Mobile Number",
                 emailAddres: "Email Addres",
+                quickConnect: "Quick Connect",
                 contactName: "Your Name",
                 contactEmail: "Your Email",
                 contactMobileNumber: "Your Mobile Number",
@@ -56,7 +60,10 @@ export default function GVG() {
         ],
         Armenian: [
             {
+                videoGraphic: "ՏԵՍԱՆԿԱՐԱՀԱՆՄԱՆ ԳՐԱՖԻԿԱ",
+                photoGraphic: "ԼՈՒՍԱՆԿԱՐԱՀԱՆՄԱՆ ԳՐԱՖԻԿԱ",
                 headinng: "Որակյալ տեսանկարահանման ծառայություններ",
+                headinngTwo: "Որակյալ լուսանկարահանման ծառայություններ",
                 expert: "10 տարվա փորձ",
                 home: "Գլխավոր",
                 about: "Մասին",
@@ -78,6 +85,7 @@ export default function GVG() {
                 corporateEvents: "Կորպորատիվ միջոցառումների, համերգների, հաղորդումների, ֆիլմերի նկարահանում և պատրաստում",
                 mobileNumber: "Հեռախոսահամար",
                 emailAddres: "Էլ․ Հասցե",
+                quickConnect: "Արագ միացում",
                 contactName: "Ձեր անունը",
                 contactEmail: "Ձեր էլ․ հասցեն",
                 contactMobileNumber: "Ձեր հեռախոսահամարը",
@@ -88,7 +96,10 @@ export default function GVG() {
         ],
         Russian: [
             {
+                videoGraphic: "ВИДЕОГРАФИЯ ГРАФИКА",
+                photoGraphic: "ФОТОГРАФИЯ ГРАФИКА",
                 headinng: "Качественные услуги видеосъемки",
+                headinngTwo: "Качественные фотоуслуги",
                 expert: "10-летний эксперт",
                 home: "Главный",
                 about: "Онас",
@@ -110,6 +121,7 @@ export default function GVG() {
                 corporateEvents: "Корпоративные мероприятия, концерты, программы, фильмов снимаю и делаю",
                 mobileNumber: "Номер мобильного телефона",
                 emailAddres: "Адрес эл. почты",
+                quickConnect: "Быстрое соединение",
                 contactName: "Ваше имя",
                 contactEmail: "Ваш адрес эл․ почты адрес",
                 contactMobileNumber: "Ваш номер телефона",

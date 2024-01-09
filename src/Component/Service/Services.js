@@ -11,7 +11,8 @@ import startup from "../../img/startup.jpeg";
 import website from "../../img/website.jpg";
 import end from "../../img/end.jpg"
 import HomeService from "./HomeService";
-import Footer from "../Footer/Footer"
+import Footer from "../Footer/Footer";
+import { Outlet, Link } from "react-router-dom";
 
 export default function Services({ selectLanguage, language }) {
 
@@ -74,9 +75,16 @@ export default function Services({ selectLanguage, language }) {
     return (
         <div>
             <section className="service" style={{ paddingBottom: 60 }}>
-                <div className="serviceHeader" style={{ paddingTop: 70 }}>
+                <div className="serviceHeader">
                     {selectLanguage[language].map((lang) => {
-                        return <h2>{lang.ourService}</h2>
+                        return <div>
+                        <h2>{lang.ourService}</h2>
+                        <div>
+                            <Link to="/">{lang.home}</Link>
+                            <span>|</span>
+                            <Link to="/services">{lang.ourService}</Link>
+                        </div>
+                    </div>
                     })}
                 </div>
                 <HomeService language={language} selectLanguage={selectLanguage}></HomeService>

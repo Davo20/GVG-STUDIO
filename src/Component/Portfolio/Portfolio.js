@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HomePortfolio from "./HomePortfolio";
-import Footer from "../Footer/Footer"
+import Footer from "../Footer/Footer";
+import { Outlet, Link } from "react-router-dom";
 import "./portfolio.scss";
 
 export default function Portfolio({ selectLanguage, language }) {
@@ -9,9 +10,16 @@ export default function Portfolio({ selectLanguage, language }) {
     return (
         <div>
             <section className="portfolio" style={{ paddingBottom: 60 }}>
-                <div className="portfolioHeader" style={{ paddingTop: 70 }}>
+                <div className="portfolioHeader">
                     {selectLanguage[language].map((lang) => {
-                        return <h2>{lang.portfolio}</h2>
+                        return <div>
+                            <h2>{lang.portfolio}</h2>
+                            <div>
+                                <Link to="/">{lang.home}</Link>
+                                <span>|</span>
+                                <Link to="/portfolio">{lang.portfolio}</Link>
+                            </div>
+                        </div>
                     })}
                 </div>
                 <HomePortfolio></HomePortfolio>

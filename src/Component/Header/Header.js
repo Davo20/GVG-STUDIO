@@ -1,19 +1,72 @@
 import React, { useRef } from "react";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import pic from "../../img/headerPic.jpg";
 import "./header.scss"
 
 export default function Header({ selectLanguage, language }) {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
     return (
         <header>
-            <div className="headerCont">
-                {/* <img src={pic}></img> */}
-                {selectLanguage[language].map((lang) => {
-                    return <div>
-                        <h2>{lang.expert}</h2>
-                        <p>{lang.headinng}</p>
+
+            {/* <img src={pic}></img> */}
+            {selectLanguage[language].map((lang) => {
+
+                return <Carousel responsive={responsive}
+                    swipeable={false}
+                    draggable={false}
+                    showDots={true}
+                    containerClass="carousel-container"
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                    autoPlaySpeed={5000}
+                    autoPlay={true}
+                    focusOnSelect={true}
+                    rewindWithAnimation={true}
+                    minimumTouchDrag={10}
+                    dotListClass="custom-dot-list-style"
+                    itemClass="carousel-item-padding-40-px">
+                    <div className="headerCont">
+                        <div>
+                            <h2>{lang.videoGraphic}</h2>
+                            <h3>{lang.expert}</h3>
+                            <p>{lang.headinng}</p>
+                        </div>
                     </div>
-                })}
-            </div>
+                    <div className="headerContTwo">
+                        <div>
+                            <h2>{lang.photoGraphic}</h2>
+                            <h3>{lang.expert}</h3>
+                            <p>{lang.headinngTwo}</p>
+                        </div>
+                    </div>
+                </Carousel>
+
+                // return <div>
+
+                //     <h2>VIDEO GRAPHIC</h2>
+                //     <h3>{lang.expert}</h3>
+                //     <p>{lang.headinng}</p>
+                // </div>
+            })}
+
         </header>
     )
 }

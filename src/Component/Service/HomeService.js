@@ -39,9 +39,6 @@ export default function HomeService({ selectLanguage, language }) {
                         draggable={false}
                         showDots={true}
                         containerClass="carousel-container"
-                        // centerMode={true}
-                        // renderDotsOutside={true}
-                        // deviceType={deviceType}
                         ssr={true} // means to render carousel on server-side.
                         infinite={true}
                         // autoPlay={this.props.deviceType !== "mobile" ? true : false}

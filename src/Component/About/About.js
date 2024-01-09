@@ -2,23 +2,31 @@ import React from "react";
 import HomeAbout from "./HomeAbout";
 import Footer from "../Footer/Footer"
 import aboutPic from "../../img/about.jpg";
+import { Outlet, Link } from "react-router-dom";
 import "./about.scss";
 
 export default function About({ selectLanguage, language }) {
     return (
         <div>
-        <section className="aboutUs" style={{paddingBottom: 60}}>
-            <div className="aboutHeader" style={{paddingTop: 70}}>
+            <section className="aboutUs" style={{ paddingBottom: 60 }}>
+                <div className="aboutHeader" >
+                    {selectLanguage[language].map((lang) => {
+                        return <div>
+                            <h2>{lang.aboutUs}</h2>
+                            <div>
+                                <Link to="/">{lang.home}</Link>
+                                <span>|</span>
+                                <Link to="/about">{lang.aboutUs}</Link>
+                            </div>
+                        </div>
+                    })}
+                </div>
                 {selectLanguage[language].map((lang) => {
-                    return <h2>{lang.aboutUs}</h2>
-                })}
-            </div>
-            {selectLanguage[language].map((lang) => {
                     return <h2 data-aos="zoom-out">{lang.aboutUs}</h2>
-            })}
-            <HomeAbout></HomeAbout>
-        </section>
-        <Footer selectLanguage={selectLanguage} language={language}></Footer>
+                })}
+                <HomeAbout></HomeAbout>
+            </section>
+            <Footer selectLanguage={selectLanguage} language={language}></Footer>
         </div>
     )
 }
