@@ -6,10 +6,12 @@ header{
         background: url(../../img/backgroundHeader.jpg);
         background-repeat: no-repeat;
         background-origin: content-box;
+        background-position: center;
         background-size: 100%;
         background-size: cover;
+        background-clip: padding-box;
         background-attachment: fixed;
-        width: 100%;
+        // width: 100%;
         height: 100vh;
         position: relative;
         display: flex;
@@ -25,7 +27,7 @@ header{
             position: absolute;
             h2{
                 color: white;
-                font-size: 6vw;
+                // font-size: 6vw;
                 margin-block-end: 0;
             }
             h3{
@@ -72,6 +74,32 @@ header{
                 border: none;
                 // padding: 5px;
                 // padding: 3px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 465px) {
+    .headerCont, .headerContTwo{
+        div{
+            width: 100%;
+            position: absolute;
+            h2{
+                color: white;
+                font-size: 6vw;
+                margin-block-end: 0;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 465px) {
+    .headerCont, .headerContTwo{
+        div{
+            width: 100%;
+            position: absolute;
+            h2{
+                color: white;
+                font-size: 20vw;
+                margin-block-end: 0;
             }
         }
     }
