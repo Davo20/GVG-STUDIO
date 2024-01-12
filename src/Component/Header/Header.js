@@ -45,16 +45,16 @@ export default function Header({ selectLanguage, language }) {
                     itemClass="carousel-item-padding-40-px">
                     <div className="headerCont">
                         <div>
-                            <h2>{lang.videoGraphic}</h2>
-                            <h3>{lang.expert}</h3>
-                            <p>{lang.headinng}</p>
+                            <h2 data-aos="zoom-out" data-aos-duration="1000">{lang.videoGraphic}</h2>
+                            <h3 data-aos="zoom-out" data-aos-duration="1200">{lang.expert}</h3>
+                            <p  data-aos="zoom-out" data-aos-duration="1400">{lang.headinng}</p>
                         </div>
                     </div>
                     <div className="headerContTwo">
                         <div>
-                            <h2>{lang.photoGraphic}</h2>
-                            <h3>{lang.expert}</h3>
-                            <p>{lang.headinngTwo}</p>
+                            <h2 data-aos="zoom-out" data-aos-duration="1000">{lang.photoGraphic}</h2>
+                            <h3 data-aos="zoom-out" data-aos-duration="1200">{lang.expert}</h3>
+                            <p data-aos="zoom-out" data-aos-duration="1400">{lang.headinngTwo}</p>
                         </div>
                     </div>
                 </Carousel>

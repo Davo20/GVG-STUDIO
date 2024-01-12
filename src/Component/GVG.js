@@ -8,10 +8,12 @@ import Portfolio from "./Portfolio/Portfolio";
 import Team from "./Team/Team";
 import Contact from "./Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import "./home.scss"
 
 export default function GVG() {
     const [language, setLanguage] = useState("English")
+    const [arrowFadeUp, setArrowUp] = useState(false)
 
     // const languageClick = (e) => {
     //     setLanguage(e.target.value)
@@ -131,6 +133,24 @@ export default function GVG() {
             }
         ]
     }
+    function arrowUp() {
+        if (window.scrollY > 400) {
+            setArrowUp(true)
+
+        }
+        else {
+            setArrowUp(false)
+
+        }
+    }
+    window.addEventListener("scroll", arrowUp)
+
+    const scrollUp = ()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
     return (
         <main>
             <BrowserRouter>
@@ -144,6 +164,9 @@ export default function GVG() {
                     <Route path="contact" element={<Contact selectLanguage={selectLanguage} language={language}></Contact>}></Route>
                 </Routes>
             </BrowserRouter>
+            <div className={"fadeUp " + (arrowFadeUp && "activeArrowUp")} onClick={scrollUp}>
+            <MdOutlineKeyboardArrowUp />
+            </div>
         </main>
     )
 }
