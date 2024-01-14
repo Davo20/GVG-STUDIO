@@ -11,8 +11,8 @@ export default function Portfolio({ selectLanguage, language }) {
         <div>
             <section className="portfolio" style={{ paddingBottom: 60 }}>
                 <div className="portfolioHeader">
-                    {selectLanguage[language].map((lang) => {
-                        return <div>
+                    {selectLanguage[language].map((lang, index) => {
+                        return <div key={index}>
                             <h2>{lang.portfolio}</h2>
                             <div>
                                 <Link to="/">{lang.home}</Link>

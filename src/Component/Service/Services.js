@@ -76,8 +76,8 @@ export default function Services({ selectLanguage, language }) {
         <div>
             <section className="service" style={{ paddingBottom: 60 }}>
                 <div className="serviceHeader">
-                    {selectLanguage[language].map((lang) => {
-                        return <div>
+                    {selectLanguage[language].map((lang, index) => {
+                        return <div key={index}>
                         <h2>{lang.ourService}</h2>
                         <div>
                             <Link to="/">{lang.home}</Link>

@@ -28,7 +28,7 @@ export default function Header({ selectLanguage, language }) {
             {/* <img src={pic}></img> */}
             {selectLanguage[language].map((lang) => {
 
-                return <Carousel responsive={responsive}
+                return <Carousel key={Math.random()} responsive={responsive}
                     swipeable={false}
                     draggable={false}
                     showDots={true}

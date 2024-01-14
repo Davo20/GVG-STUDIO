@@ -9,8 +9,8 @@ import "./contact.scss";
 
 export default function Contact({ selectLanguage, language }) {
     return (
-        selectLanguage[language].map((lang) => {
-            return <div className="contactCont">
+        selectLanguage[language].map((lang, index) => {
+            return <div className="contactCont" key={index}>
                 <div className="addres" data-aos="fade-up">
                     <div className="addresCont">
                         <div>

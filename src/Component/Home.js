@@ -10,7 +10,7 @@ import Footer from "./Footer/Footer"
 import aboutPic from "../img/about.jpg"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import teamPic from "../img/2.jpg";
-import { BsTelephone } from "react-icons/bs";
+import { BsHandIndexThumb, BsTelephone } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -55,23 +55,21 @@ export default function Home({ selectLanguage, language }) {
     return (
         <div>
             <Header selectLanguage={selectLanguage} language={language}></Header>
-            {/* <Aside></Aside> */}
-            {/* ABOUT SECTION */}
             <section className="aboutUs" >
-                {selectLanguage[language].map((lang) => {
-                    return <h2 className="sectionName" data-aos="zoom-out">{lang.aboutUs}</h2>
+                {selectLanguage[language].map((lang, index) => {
+                    return <h2 key={index} className="sectionName" data-aos="zoom-out">{lang.aboutUs}</h2>
                 })}
                 <HomeAbout></HomeAbout>
             </section>
             {/* SERVICES */}
             <section className="service">
                 {selectLanguage[language].map((lang) => {
-                    return <h2 className="sectionName" data-aos="zoom-out">{lang.ourService}</h2>
+                    return <h2 key={Math.random()} className="sectionName" data-aos="zoom-out">{lang.ourService}</h2>
                 })}
                 <div className="serviceCont">
-                    {selectLanguage[language].map((lang) => {
+                    {selectLanguage[language].map((lang, index) => {
 
-                        return <Carousel responsive={responsive}
+                        return <Carousel key={index} responsive={responsive}
                             swipeable={false}
                             draggable={false}
                             showDots={true}
@@ -127,22 +125,22 @@ export default function Home({ selectLanguage, language }) {
             </section>
             {/* PORTFOLIO SECTION */}
             <section className="portfolio">
-                {selectLanguage[language].map((lang) => {
-                    return <h2 className="sectionName" data-aos="zoom-out">{lang.portfolio}</h2>
+                {selectLanguage[language].map((lang, index) => {
+                    return <h2 key={index} className="sectionName" data-aos="zoom-out">{lang.portfolio}</h2>
                 })}
                 <HomePortfolio></HomePortfolio>
             </section>
             {/* TEAM SECTION */}
             <section className="team">
-                {selectLanguage[language].map((lang) => {
-                    return <h2 className="sectionName" data-aos="zoom-out">{lang.ourTeam}</h2>
+                {selectLanguage[language].map((lang, index) => {
+                    return <h2 key={BsHandIndexThumb} className="sectionName" data-aos="zoom-out">{lang.ourTeam}</h2>
                 })}
                 <HomeTeam selectLanguage={selectLanguage} language={language}></HomeTeam>
             </section>
             {/* CONTACT SECTION */}
             <section className="contact">
-                {selectLanguage[language].map((lang) => {
-                    return <div>
+                {selectLanguage[language].map((lang, index) => {
+                    return <div key={index}>
                         <h2 className="sectionName" data-aos="zoom-out">{lang.contact}</h2>
                         <p data-aos="zoom-out">{lang.contactAbout}</p>
                     </div>

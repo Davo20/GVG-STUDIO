@@ -32,9 +32,9 @@ export default function HomeService({ selectLanguage, language }) {
             // <h2 data-aos="zoom-out">Services</h2>
             <div className="serviceCont">
                 
-                {selectLanguage[language].map((lang) => {
+                {selectLanguage[language].map((lang, index) => {
 
-                    return <Carousel responsive={responsive}
+                    return <Carousel key={index} responsive={responsive}
                         swipeable={false}
                         draggable={false}
                         showDots={true}

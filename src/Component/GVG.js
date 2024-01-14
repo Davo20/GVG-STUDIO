@@ -15,10 +15,7 @@ export default function GVG() {
     const [language, setLanguage] = useState("English")
     const [arrowFadeUp, setArrowUp] = useState(false)
 
-    // const languageClick = (e) => {
-    //     setLanguage(e.target.value)
-    //     // console.log(e.target.options)
-    // }
+
     const languageClick = (value) => {
         setLanguage(value) // { value: "lucy", key: "lucy", label: "Lucy (101)" }
       };

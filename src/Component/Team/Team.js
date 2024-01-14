@@ -11,8 +11,8 @@ export default function Team({ selectLanguage, language }) {
         <div>
             <section className="team" style={{ paddingBottom: 60 }}>
                 <div className="teamHeader">
-                    {selectLanguage[language].map((lang) => {
-                        return <div>
+                    {selectLanguage[language].map((lang, index) => {
+                        return <div key={index}>
                         <h2>{lang.ourTeam}</h2>
                         <div>
                             <Link to="/">{lang.home}</Link>

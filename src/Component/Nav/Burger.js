@@ -8,7 +8,7 @@ export default function Burger({ languageClick, language, selectLanguage, menuBu
         <div className={"burgerNavigationBar " + (menuBurger && "navStikyBurger")}>
             <div className="navBarMenuBurger">
                 {selectLanguage[language].map((lang) => {
-                    return <ul>
+                    return <ul key={Math.random()}>
                         <div className="menuLink">
                             <Link to="/" onClick={()=>setMenuBurger(false)}>
                                 <li>{lang.home}</li>

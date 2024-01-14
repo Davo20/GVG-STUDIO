@@ -13,8 +13,8 @@ export default function Contact({ selectLanguage, language }) {
         <div>
             <section className="contact" style={{ paddingBottom: 60 }}>
                 <div className="contactHeader">
-                    {selectLanguage[language].map((lang) => {
-                        return <div>
+                    {selectLanguage[language].map((lang, index) => {
+                        return <div key={index}>
                         <h2>{lang.contact}</h2>
                         <div>
                         <Link to="/">{lang.home}</Link>
@@ -24,8 +24,8 @@ export default function Contact({ selectLanguage, language }) {
                     </div>
                     })}
                 </div>
-                {selectLanguage[language].map((lang) => {
-                        return <div>
+                {selectLanguage[language].map((lang, index) => {
+                        return <div key={index}>
                             <h2>{lang.contact}</h2>
                             <p>{lang.contactAbout}</p>
                         </div>

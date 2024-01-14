@@ -38,7 +38,7 @@ export default function Nav({ languageClick, language, selectLanguage }) {
 
                 <div className="navBarMenu">
                     {selectLanguage[language].map((lang) => {
-                        return <ul>
+                        return <ul key={Math.random()}>
                             <Link to="/">
                                 <li>{lang.home}</li>
                             </Link>
